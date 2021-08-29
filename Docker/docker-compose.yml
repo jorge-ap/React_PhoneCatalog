@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:latest
+    container_name: phoneDB
+    restart: always
+    environment:
+      - MYSQL_DATABASE=phoneCatalog
+      - MYSQL_ROOT_PASSWORD=password
+
+  web:
+    image: jorgeap/phonecatalog:latest
+    ports:
+      - 8080:8080
+    container_name: phoneCatalog
+    restart: always
+    links:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db/phoneCatalog
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=password
