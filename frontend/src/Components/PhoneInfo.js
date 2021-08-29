@@ -34,17 +34,16 @@ export const PhoneInfo = () => {
                         <div className="row">
                             <Link className="returnButton" to={"/phones"}>Return to catalog</Link>
                             <h1>{phone.name}</h1>
-                            <div className="imageSection col-lg-5 col-md-6 col-sm-6  align-content-center">
+                            <div className="imageSection col-lg-5 col-md-6 col-sm-6  ">
                                 <h4 className="imageTitle">Product image</h4>
                                 <img className="phoneLogo" src={url+"/"+phoneId+"/image"} alt="" />
                                 <div className="row">
-                                    <Link to={`/phones/${phone.id}/edit`} type="button" className="edit btn btn-primary">Edit</Link>
+                                    <Link to={`/phones/${phone.id}/edit`} type="button" className="btn btn-primary edit">Edit</Link>
                                 </div>
                             </div>
                             <div className="col-lg-7 col-md-6 col-sm-6">
                                 <div className="row info">
                                     <h2>Price: <span className="price">{phone.price} €</span></h2>
-                                    <h3 className="align-content-center">Other specifications</h3>
                                     <h3>Manufacturer : {phone.manufacturer} </h3>
                                     <h3>Screen size : {phone.screen}" </h3>
                                     <h3>RAM : {phone.ram} GB</h3>

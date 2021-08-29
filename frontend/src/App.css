@@ -58,7 +58,7 @@ h1,h2,h3,h4,h5,h6, p {
 .phoneLogo{
   display: inline-block;
   min-height: 30vh;
-  width: 90%;
+  width: 60%;
   max-height: 50vh;
   border-radius: 20px;
 }
@@ -103,7 +103,7 @@ h1,h2,h3,h4,h5,h6, p {
   display: inline-block;
   line-height: 0;
   transition: 0.3s;
-  width: 70%;
+  width: 100%;
 }
 
 .services .box {

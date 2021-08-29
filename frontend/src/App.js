@@ -3,7 +3,7 @@ import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import {PhoneCatalog} from "./Components/PhoneCatalog";
 import {PhoneInfo} from "./Components/PhoneInfo"
 import {PhoneCreationForm} from "./Components/PhoneCreationForm";
-import {EditPhoneInfo} from "./Components/EditPhoneInfo";
+import {PhoneEditionInfo} from "./Components/PhoneEditionInfo";
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
                         <PhoneInfo />
                     </Route>
                     <Route exact path = {"/phones/:phoneId/edit"}>
-                        <EditPhoneInfo/>
+                        <PhoneEditionInfo/>
                     </Route>
                 </Switch>
             </BrowserRouter>

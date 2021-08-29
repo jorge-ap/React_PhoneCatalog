@@ -2,19 +2,72 @@
     min-height: 100vh;
 }
 
+.contact-form .form-field{
+    position: relative;
+    margin: 20px 0;
+}
+
+.contact-form .form-control{
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-bottom-color: #12a294;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.contact-form .form-field{
+    position: relative;
+    margin: 20px 0;
+}
 
 .edit{
     margin-top: 10%;
     margin-bottom: 10%;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
 }
 
 @media (max-width: 400px){
     .info{
         font-size: medium;
     }
-
     .edit{
         margin-top: 20%;
+        font-size: medium;
     }
+
+}
+
+.profile-background{
+    margin-top: 3%;
+    border-radius: 20px;
+    width: 100%;
+    align-content: center;
+    height: 100%;
+}
+
+.profile-background .phoneLogo{
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.submit{
+    margin-top: 3%;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+label{
+    font-family: "Nunito", sans-serif;
+    color: darkblue;
+}
+
+.containerPhoto{
+
 
 }
