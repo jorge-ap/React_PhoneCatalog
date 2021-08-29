@@ -4,11 +4,11 @@ services:
 
   db:
     image: mysql:latest
-    container_name: phoneDB
+    container_name: phone_db
     restart: always
     environment:
       - MYSQL_DATABASE=phoneCatalog
-      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=phonePassword1
 
   web:
     image: jorgeap/phonecatalog:latest
@@ -21,4 +21,4 @@ services:
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db/phoneCatalog
       - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_DATASOURCE_PASSWORD=phonePassword1
