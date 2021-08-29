@@ -7,7 +7,7 @@ import {SpinnerLoader} from "./SpinnerLoader";
 const url = "http://localhost:8080"
 
 export const PhoneCreationForm = () => {
-    const {register, handleSubmit, formState: {errors}} = useForm();
+    const {register, handleSubmit} = useForm();
 
     const [loading, setLoading] = useState(false)
     const [image, setImage] = useState([])
@@ -20,27 +20,37 @@ export const PhoneCreationForm = () => {
             headers: {
                 'Content-type': 'application/json'
             }
-        }).then((response) => response.json()
-            .then(response => {
-                setLoading(false)
-                if (image.length !== 0){
-                    const fd = new FormData();
-                    fd.append("imageFile", image, image.name)
-                    setLoading(true)
-                    fetch(url + "/" + response.id + "/image", {
-                            method: "POST",
-                            body: fd
-                        }
-                    ).then(() => {
-                        setLoading(false)
-
-                    })
-                }
-
+        }).then((response) => {
+            if(response.status !== 201){
+                alert("There was an error")
                 return <Redirect to={"/phones"}/>
-            })
-
-        )
+            }
+            if (response.status === 400){
+                alert("Bad request")
+            }
+                if (response.status === 500){
+                    alert("Exists already a phone with this name")
+                }
+                response.json()
+                    .then(response => {
+                        setLoading(false)
+                        if (image.length !== 0){
+                            const fd = new FormData();
+                            fd.append("imageFile", image, image.name)
+                            setLoading(true)
+                            fetch(url + "/" + response.id + "/image", {
+                                    method: "POST",
+                                    body: fd
+                                }
+                            ).then(() => {
+                                setLoading(false)
+                            })
+                        }
+                    })
+        }
+        ).catch((error) => {
+            alert(error.status)
+        })
     }
 
 

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useForm} from "react-hook-form";
 import {Link, useParams} from "react-router-dom";
 import {SpinnerLoader} from "./SpinnerLoader";
@@ -9,9 +9,8 @@ export const EditPhoneInfo = ({preloadedData}) => {
     const [loading, setLoading] = useState(false)
 
 
-    const {register, handleSubmit, errors} = useForm({
+    const {register, handleSubmit} = useForm({
         defaultValues : preloadedData
-
     })
 
     const {phoneId} = useParams()
@@ -86,7 +85,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="name" className="form-label">
                                             Name
                                         </label>
-                                        <input type="text" placeholder="Name" name="name"
+                                        <input placeholder={preloadedData.name} type="text" autoComplete={true} name="name"
                                                className="form-control"
                                                required={true} {...register('name')}/>
                                     </div>
@@ -95,7 +94,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="manufacturer" className="form-label">
                                             Manufacturer
                                         </label>
-                                        <input type="text" placeholder="Manufacturer" name="manufacturer"
+                                        <input placeholder={preloadedData.manufacturer} autoComplete={true} type="text" name="manufacturer"
                                                className="form-control"
                                                required={true} {...register('manufacturer')} />
                                     </div>
@@ -104,7 +103,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="price" className="form-label">
                                             Price
                                         </label>
-                                        <input type="number" placeholder="" name="price"
+                                        <input placeholder={preloadedData.price} type="number" name="price"
                                                className="form-control"
                                                required={true} {...register('price')} />
                                     </div>
@@ -113,7 +112,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="screen" className="form-label">
                                             Screen
                                         </label>
-                                        <input type="text" placeholder="5.6" name="screen"
+                                        <input placeholder={preloadedData.screen} type="text" name="screen"
                                                className="form-control"
                                                required={true} {...register('screen')} />
                                     </div>
@@ -122,7 +121,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="ram" className="form-label">
                                             RAM
                                         </label>
-                                        <input type="number" placeholder="" name="ram"
+                                        <input placeholder={preloadedData.ram} type="number"
                                                className="form-control"
                                                required={true} {...register('RAM')} />
                                     </div>
@@ -131,7 +130,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="ram" className="form-label">
                                             Year
                                         </label>
-                                        <input type="number" placeholder="2021" name="year"
+                                        <input placeholder={preloadedData.year} type="number" name="year"
                                                className="form-control"
                                                required={true} {...register('year')} />
                                     </div>
