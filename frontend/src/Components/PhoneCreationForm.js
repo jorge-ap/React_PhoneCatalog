@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useForm} from "react-hook-form";
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {SpinnerLoader} from "./SpinnerLoader";
 
 
@@ -23,7 +23,6 @@ export const PhoneCreationForm = () => {
         }).then((response) => {
             if(response.status !== 201){
                 alert("There was an error")
-                return <Redirect to={"/phones"}/>
             }
             if (response.status === 400){
                 alert("Bad request")
@@ -100,7 +99,7 @@ export const PhoneCreationForm = () => {
                                     <label htmlFor="price" className="form-label">
                                         Price
                                     </label>
-                                    <input type="number" placeholder="" name="price"
+                                    <input type="number" placeholder="1000" name="price"
                                            className="form-control"
                                            required={true} {...register('price')} />
                                 </div>
@@ -118,13 +117,13 @@ export const PhoneCreationForm = () => {
                                     <label htmlFor="ram" className="form-label">
                                         RAM
                                     </label>
-                                    <input type="number" placeholder="" name="ram"
+                                    <input type="number" placeholder="5" name="ram"
                                            className="form-control"
                                            required={true} {...register('RAM')} />
                                 </div>
 
                                 <div className="col-lg-6 col-sm-6">
-                                    <label htmlFor="ram" className="form-label">
+                                    <label htmlFor="year" className="form-label">
                                         Year
                                     </label>
                                     <input type="number" placeholder="2021" name="year"

@@ -7,19 +7,20 @@ export const PhoneEditionInfo = () => {
 
     const url = "http://localhost:8080"
     const {phoneId} = useParams()
-
+    const [loading, setLoading] = useState(false)
     const [phone, setPhone] = useState([])
 
     useEffect(() => {
-
+        setLoading(true)
             fetch(url + "/" + phoneId)
                 .then(res => res.json())
                 .then(res => {
                     setPhone(res)
+                    setLoading(false)
                 })
         }, [phoneId]
     )
 
-    return phone ? <EditPhoneInfo preloadedData={phone}/> : <SpinnerLoader/>
+    return loading ? <SpinnerLoader/> : <EditPhoneInfo preloadedData={phone}/>
 
 }

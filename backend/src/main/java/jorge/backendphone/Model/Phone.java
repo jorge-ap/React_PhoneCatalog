@@ -49,7 +49,17 @@ public class Phone {
         this.RAM = RAM;
         this.year = year;
         try {
-            Resource resource = new ClassPathResource("/static/images/"+manufacturer+ ".png");
+            Resource resource = new ClassPathResource("/static/images/default.png");
+            setImage(BlobProxy.generateProxy(resource.getInputStream()
+                    , resource.contentLength()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addImageFromResources(String name){
+        try {
+            Resource resource = new ClassPathResource("/static/images/"+name+ ".jpg");
             setImage(BlobProxy.generateProxy(resource.getInputStream()
                     , resource.contentLength()));
         } catch (IOException e) {

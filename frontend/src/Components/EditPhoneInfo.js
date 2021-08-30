@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {useForm} from "react-hook-form";
 import {Link, useParams} from "react-router-dom";
 import {SpinnerLoader} from "./SpinnerLoader";
+import '../App.css'
+import './PhoneInfo.css'
 
 const url = "http://localhost:8080"
 
@@ -63,7 +65,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                         </div>
 
                         <div className="col-lg-10 col-md-10 col-sm-10 content">
-                            <Link className="returnButton" to={"/phones"}>Return to catalog</Link>
+                            <Link className="returnButton" to={"/phones"}> &lt;  Catalog </Link>
                             <div className="row d-flex justify-content-center">
                                 <div className="containerPhoto">
                                     <div className="container photo">
@@ -85,7 +87,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="name" className="form-label">
                                             Name
                                         </label>
-                                        <input placeholder={preloadedData.name} type="text" autoComplete={true} name="name"
+                                        <input placeholder={preloadedData.name} type="text" autoComplete="true" name="name"
                                                className="form-control"
                                                required={true} {...register('name')}/>
                                     </div>
@@ -94,7 +96,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="manufacturer" className="form-label">
                                             Manufacturer
                                         </label>
-                                        <input placeholder={preloadedData.manufacturer} autoComplete={true} type="text" name="manufacturer"
+                                        <input placeholder={preloadedData.manufacturer} autoComplete="true" type="text" name="manufacturer"
                                                className="form-control"
                                                required={true} {...register('manufacturer')} />
                                     </div>
@@ -104,6 +106,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                             Price
                                         </label>
                                         <input placeholder={preloadedData.price} type="number" name="price"
+                                               autoComplete="true"
                                                className="form-control"
                                                required={true} {...register('price')} />
                                     </div>
@@ -113,6 +116,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                             Screen
                                         </label>
                                         <input placeholder={preloadedData.screen} type="text" name="screen"
+                                               autoComplete="true"
                                                className="form-control"
                                                required={true} {...register('screen')} />
                                     </div>
@@ -122,21 +126,26 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                             RAM
                                         </label>
                                         <input placeholder={preloadedData.ram} type="number"
+                                               autoComplete="true"
                                                className="form-control"
-                                               required={true} {...register('RAM')} />
+                                               required={true} {...register('ram')} />
                                     </div>
 
                                     <div className="col-lg-6 col-sm-6">
-                                        <label htmlFor="ram" className="form-label">
+                                        <label htmlFor="year" className="form-label">
                                             Year
                                         </label>
                                         <input placeholder={preloadedData.year} type="number" name="year"
+                                               autoComplete="true"
                                                className="form-control"
-                                               required={true} {...register('year')} />
+                                               required={true} {...register('year', {pattern : /20[0-9]{2/})}
+                                        />
                                     </div>
-
+                                    <div>
+                                        <input className="btn btn-success submit" value="Submit" type="submit"/>
+                                    </div>
                                 </div>
-                                <input className="submit btn btn-success" value="Submit" type="submit"/>
+
                             </form>
 
 

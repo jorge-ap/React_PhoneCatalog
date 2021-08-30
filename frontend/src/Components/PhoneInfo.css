@@ -59,7 +59,7 @@
 .submit{
     margin-top: 3%;
     margin-bottom: 5%;
-    width: 100%;
+    width: 50%;
 }
 
 label{
@@ -67,7 +67,32 @@ label{
     color: darkblue;
 }
 
-.containerPhoto{
+.image{
+    border-style: outset;
+    border-right-color: rgba(4, 87, 241, 0.4);
+    border-bottom-color: rgba(4, 87, 241, 0.4);
+    border-left-color: grey;
+    border-top-color: grey;
+    margin-bottom: 3%;
+    border-radius: 10px;
+}
 
+
+.priceInfo{
+    margin-bottom: 5%;
+    text-decoration: underline;
+}
+
+.price{
+    text-align: center;
+}
+
+.otherInfoTitle{
+    text-decoration: underline;
+    margin-bottom: 2%;
+}
+
+.otherInfo{
+    background-color: aliceblue;
 
 }

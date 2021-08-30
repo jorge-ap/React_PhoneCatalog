@@ -46,21 +46,21 @@ export const PhoneCatalog = () => {
                 <SpinnerLoader loading={loading}/>
                 :
                 <div className="row services">
-                    <div className="col-lg-1">
+                    <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                     </div>
-                    <div className="col-lg-10 col-sm-12 content">
+                    <div className="col-lg-10 col-md-10 col-sm-10 col-xs-10 content">
                         <h1 className="title">Phone Catalog</h1>
                         <Link to={`/phones/newPhone`} type="button" className="btn btn-success mb-4">Create new phone</Link>
                         <div className="container-fluid">
                             <div className="row">
                                 {phones.map(phone =>
-                                    <div key={phone.id} className="col-lg-4 col-md-4 col-sm-6 itemCatalog">
+                                    <div key={phone.id} className="col-lg-4 col-md-4 col-sm-6 col-xs-6 itemCatalog">
                                         <div className="box">
                                             <Link to={"/" + phone.id}>
-                                                <div>
+                                                <div className="imageHolder">
                                                     <img className="phoneLogo" src={url + "/" + phone.id + "/image"} alt=""/>
                                                 </div>
-                                                <h3 className="App-link">{phone.name}</h3>
+                                                <h4 className="App-link">{phone.name}</h4>
                                             </Link>
                                             <button onClick={() => deletePhone(phone.id)} className="delete btn btn-danger">Delete</button>
                                         </div>
@@ -70,7 +70,7 @@ export const PhoneCatalog = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-1">
+                    <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                     </div>
                 </div>
             }

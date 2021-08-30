@@ -16,10 +16,25 @@ public class DataLoader {
     @PostConstruct
     public void dataInitialization(){
 
-        phoneService.savePhone(new Phone("iPhone 12", "Apple", 1259, "6.34", 6, 2020));
-        phoneService.savePhone(new Phone("iPhone 11", "Apple", 1098, "6.2", 3, 2020));
-        phoneService.savePhone(new Phone("iPhone X", "Apple", 1259, "6.26", 6, 2019));
-        phoneService.savePhone(new Phone("Samsung S21 FE", "Samsung", 1759, "6.4", 8, 2021));
+        Phone iphone12 = new Phone("iPhone 12", "Apple", 1259, "6.34", 6, 2020);
+        iphone12.addImageFromResources("iPhone 12");
+        phoneService.savePhone(iphone12);
+
+        Phone iphone11 = new Phone("iPhone 11", "Apple", 1098, "6.2", 3, 2020);
+        iphone11.addImageFromResources("iPhone 11");
+        phoneService.savePhone(iphone11);
+
+        Phone iphoneX = new Phone("iPhone X", "Apple", 1259, "6.26", 6, 2019);
+        iphoneX.addImageFromResources("iPhone X");
+        phoneService.savePhone(iphoneX);
+
+        Phone samsung21FE = new Phone("Samsung S21 FE", "Samsung", 1759, "6.4", 8, 2021);
+        samsung21FE.addImageFromResources("Samsung S21 FE");
+        phoneService.savePhone(samsung21FE);
+
+        Phone huaweiP40Pro = new Phone("Huawei Mate 40 Pro", "Huawei", 2000, "6.4", 8, 2021);
+        samsung21FE.addImageFromResources("Huawei Mate 40 pro");
+        phoneService.savePhone(samsung21FE);
     }
 
 }

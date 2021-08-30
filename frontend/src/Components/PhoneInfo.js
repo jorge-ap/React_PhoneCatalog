@@ -8,7 +8,7 @@ export const PhoneInfo = () => {
 
     const url = "http://localhost:8080"
     const [phone, setPhone] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const {phoneId} = useParams();
 
     useEffect(function () {
@@ -32,22 +32,28 @@ export const PhoneInfo = () => {
 
                     <div className="col-lg-10 col-md-10 col-sm-10 content">
                         <div className="row">
-                            <Link className="returnButton" to={"/phones"}>Return to catalog</Link>
                             <h1>{phone.name}</h1>
+                            <Link className="returnButton" to={"/phones"}> &lt;  Catalog </Link>
                             <div className="imageSection col-lg-5 col-md-6 col-sm-6  ">
-                                <h4 className="imageTitle">Product image</h4>
-                                <img className="phoneLogo" src={url+"/"+phoneId+"/image"} alt="" />
+                                <div className="image">
+                                    <img className="phoneLogo" src={url+"/"+phoneId+"/image"} alt="" />
+                                </div>
                                 <div className="row">
-                                    <Link to={`/phones/${phone.id}/edit`} type="button" className="btn btn-primary edit">Edit</Link>
+                                    <div className="edit">
+                                        <Link to={`/phones/${phone.id}/edit`} type="button" className="btn btn-primary">Edit</Link>
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-lg-7 col-md-6 col-sm-6">
                                 <div className="row info">
-                                    <h2>Price: <span className="price">{phone.price} €</span></h2>
-                                    <h3>Manufacturer : {phone.manufacturer} </h3>
-                                    <h3>Screen size : {phone.screen}" </h3>
-                                    <h3>RAM : {phone.ram} GB</h3>
-                                    <h3>Year : {phone.year} </h3>
+                                    <h2 className="priceInfo"><strong>Price: </strong> <span className="price">{phone.price} €</span></h2>
+                                    <h3 className="otherInfoTitle"><strong>Other specifications</strong></h3>
+                                    <div className="otherInfo">
+                                        <h3>Manufacturer :  {phone.manufacturer} </h3>
+                                        <h3>Screen size : {phone.screen}" </h3>
+                                        <h3>RAM : {phone.ram} GB</h3>
+                                        <h3>Year : {phone.year} </h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
