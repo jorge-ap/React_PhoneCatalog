@@ -33,8 +33,8 @@ public class DataLoader {
         phoneService.savePhone(samsung21FE);
 
         Phone huaweiP40Pro = new Phone("Huawei Mate 40 Pro", "Huawei", 2000, "6.4", 8, 2021);
-        samsung21FE.addImageFromResources("Huawei Mate 40 pro");
-        phoneService.savePhone(samsung21FE);
+        huaweiP40Pro.addImageFromResources("Huawei Mate 40 pro");
+        phoneService.savePhone(huaweiP40Pro);
     }
 
 }

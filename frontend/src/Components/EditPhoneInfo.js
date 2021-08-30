@@ -12,7 +12,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
 
 
     const {register, handleSubmit} = useForm({
-        defaultValues : preloadedData
+        defaultValues: preloadedData
     })
 
     const {phoneId} = useParams()
@@ -30,8 +30,11 @@ export const EditPhoneInfo = ({preloadedData}) => {
             }
         }).then((response) => response.json()
             .then(response => {
+                if (response.status === 500) {
+                    alert("Exists already a phone with this name")
+                }
                 setLoading(false)
-                if (image.length !== 0){
+                if (image.length !== 0) {
                     const fd = new FormData();
                     fd.append("imageFile", image, image.name)
                     setLoading(true)
@@ -67,12 +70,8 @@ export const EditPhoneInfo = ({preloadedData}) => {
                         <div className="col-lg-10 col-md-10 col-sm-10 content">
                             <Link className="returnButton" to={"/phones"}> &lt;  Catalog </Link>
                             <div className="row d-flex justify-content-center">
-                                <div className="containerPhoto">
-                                    <div className="container photo">
-                                        <div className="profile-background">
-                                            <img className="phoneLogo" src={url+"/"+phoneId+"/image"} alt="" />
-                                        </div>
-                                    </div>
+                                <div className="profile-background">
+                                    <img className="phoneLogo" src={url + "/" + phoneId + "/image"} alt=""/>
                                 </div>
                             </div>
                             <form className="mt-5" onChange={changeImage}>
@@ -87,7 +86,8 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="name" className="form-label">
                                             Name
                                         </label>
-                                        <input placeholder={preloadedData.name} type="text" autoComplete="true" name="name"
+                                        <input placeholder={preloadedData.name} type="text" autoComplete="true"
+                                               name="name"
                                                className="form-control"
                                                required={true} {...register('name')}/>
                                     </div>
@@ -96,7 +96,8 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <label htmlFor="manufacturer" className="form-label">
                                             Manufacturer
                                         </label>
-                                        <input placeholder={preloadedData.manufacturer} autoComplete="true" type="text" name="manufacturer"
+                                        <input placeholder={preloadedData.manufacturer} autoComplete="true" type="text"
+                                               name="manufacturer"
                                                className="form-control"
                                                required={true} {...register('manufacturer')} />
                                     </div>
@@ -138,7 +139,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                                         <input placeholder={preloadedData.year} type="number" name="year"
                                                autoComplete="true"
                                                className="form-control"
-                                               required={true} {...register('year', {pattern : /20[0-9]{2/})}
+                                               required={true} {...register('year', {pattern: /20[0-9]{2}/})}
                                         />
                                     </div>
                                     <div>
