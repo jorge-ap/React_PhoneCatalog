@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useForm} from "react-hook-form";
-import {Link, useParams} from "react-router-dom";
+import {Link, useHistory, useParams} from "react-router-dom";
 import {SpinnerLoader} from "./SpinnerLoader";
 import '../App.css'
 import './PhoneInfo.css'
@@ -10,6 +10,7 @@ const url = "http://localhost:8080"
 export const EditPhoneInfo = ({preloadedData}) => {
     const [loading, setLoading] = useState(false)
 
+    const history = useHistory()
 
     const {register, handleSubmit} = useForm({
         defaultValues: preloadedData
@@ -46,6 +47,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                         setLoading(false)
                     })
                 }
+                history.push("/")
             })
         )
     }
