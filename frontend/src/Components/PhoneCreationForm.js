@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useForm} from "react-hook-form";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {SpinnerLoader} from "./SpinnerLoader";
 
 
@@ -8,7 +8,7 @@ const url = "http://localhost:8080"
 
 export const PhoneCreationForm = () => {
     const {register, handleSubmit} = useForm();
-
+    const history = useHistory()
     const [loading, setLoading] = useState(false)
     const [image, setImage] = useState([])
 
@@ -45,6 +45,7 @@ export const PhoneCreationForm = () => {
                                 setLoading(false)
                             })
                         }
+                history.push("/")
                     })
             }
         ).catch((error) => {
