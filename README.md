@@ -42,8 +42,10 @@ Here you can see the phone information and do the following actions:
 
 ![image](https://user-images.githubusercontent.com/61882277/131379088-3265ec69-eaf6-45f1-8715-ab2c18a0119d.png)
 
-Here you can edit the phone. Each parameter is required except the photo, which can be empty. In this case, the image will be set by default. When you finish, you willbe redirected to the catalog.
+Here you can edit the phone. Each parameter is required except the photo, which can be empty. In this case, the image will be set by default. When you finish, you willbe redirected again to the phone information to see the uodates.
 
 ## Phone creation
 
+![image](https://user-images.githubusercontent.com/61882277/131490903-594334c5-c44a-4d59-8a90-e4e1231aaa65.png)
 
+This form is similar to the edition, except there is no picture because it does not have anyone yet. When you submit, you will be redirected to the catalog to see your upload.
