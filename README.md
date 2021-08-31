@@ -1,10 +1,10 @@
-# React_PhoneCatalog
+# PhoneCatalog
 
 Welcome to this repository! Here you can find some features:
 
 ## Views
 
-### Index - Phone catalog
+### Index - Phone catalog (/phones)
 
 ![image](https://user-images.githubusercontent.com/61882277/131491844-632ab4e1-5e11-453c-a676-23e6cac0dfdb.png)
 
@@ -24,7 +24,7 @@ Here you can do the following actions:
 
   ![image](https://user-images.githubusercontent.com/61882277/131378454-1462ddcd-be81-43e7-902d-4efd4bbb16ca.png)
   
-### Phone information
+### Phone information (/id)
 
   ![image](https://user-images.githubusercontent.com/61882277/131378989-80ff33e1-d814-4eb2-a39f-0f67aa380eea.png)
 
@@ -40,13 +40,13 @@ Here you can see the phone information and do the following actions:
 
 ![image](https://user-images.githubusercontent.com/61882277/131378850-6af99ca7-b9f5-47e8-a80b-8bdc18fa6f75.png)
 
-### Phone edition
+### Phone edition (/phones/id/edit)
 
 ![image](https://user-images.githubusercontent.com/61882277/131379088-3265ec69-eaf6-45f1-8715-ab2c18a0119d.png)
 
 Here you can edit the phone. Each parameter is required except the photo, which can be empty. In this case, the image will be set by default. When you finish, you willbe redirected again to the phone information to see the uodates.
 
-### Phone creation
+### Phone creation (/phones/newPhone)
 
 ![image](https://user-images.githubusercontent.com/61882277/131490903-594334c5-c44a-4d59-8a90-e4e1231aaa65.png)
 
@@ -62,6 +62,7 @@ To run it, you need to have:
 - Java 11
 - Browser (Google Chrome or Firefox preferred)
 - Maven, installed in ubuntu with the command `sudo apt install maven`
+- **(Optional)** IntelliJ IDEA Ultimate or Visual Studio Code to make things easier
 
 ### Run backend only
 
@@ -75,14 +76,14 @@ The following steps show how to start the developed web application:
   
     If `ERROR 1819 (HY000): Your password does not satisfy the current policy requirements.` happens, keep this steps
   
-    1. In the console write : `mysql -u root -p`
+    1. In terminal write : `mysql -u root -p`
     2. `SET GLOBAL validate_password.policy=LOW;`
     3. `exit`
     4. Open mysql again with `mysql -u root -p`
 
  `CREATE USER IF NOT EXISTS 'phoneUser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'phonePassword1';`
   
-Permissions : `GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, FILE, INDEX, ALTER, CREATE TEMPORARY TABLES, CREATE VIEW, EVENT, TRIGGER, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EXECUTE, REFERENCES ON *.* TO  `'phoneUser'@'localhost';`
+Permissions : `GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, FILE, INDEX, ALTER, CREATE TEMPORARY TABLES, CREATE VIEW, EVENT, TRIGGER, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EXECUTE, REFERENCES ON *.* TO 'phoneUser'@'localhost';`
 
 3. `CREATE DATABASE phoneCatalog;`
 4. Exit MySQL
@@ -90,3 +91,20 @@ Permissions : `GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, FILE, INDEX, 
  `./mvnn spring-boot:run`
 6. Done! The backend REST is running on `http://localhost:8080`
     
+### Run frontend only
+
+After running the backend, open the frontend folder and execute in terminal section `npm install` and after that `npm start`. This will open a new browser tab on `http://localhost:3000`
+
+## Information about docker
+
+**Every information is related to Ubuntu**
+The image is posted on dockerhub in the next link : [Dockerhub](https://hub.docker.com/r/jorgeap/phonecatalog)
+
+To execute docker, with the project downloaded, go to docker folder and run in terminal:
+1. `chmod u+x create_image.sh`
+2. `./create_image.sh`
+3. `sudo docker-compose up`
+
+After this, the backend will be displayed on `http://localhost:8080`
+
+**NOTE:** Despite building an copying the build folder created when `npm run build` to backend folder, frontend is not shown and located correctly, so the frontend needs to be displayed on `http://localhost:8080`
