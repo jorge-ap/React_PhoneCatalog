@@ -47,7 +47,7 @@ export const EditPhoneInfo = ({preloadedData}) => {
                         setLoading(false)
                     })
                 }
-                history.push("/")
+                history.push("/" + phoneId)
             })
         )
     }

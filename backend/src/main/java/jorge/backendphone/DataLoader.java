@@ -32,9 +32,14 @@ public class DataLoader {
         samsung21FE.addImageFromResources("Samsung S21 FE");
         phoneService.savePhone(samsung21FE);
 
-        Phone huaweiP40Pro = new Phone("Huawei Mate 40 Pro", "Huawei", 2000, "6.4", 8, 2021);
+        Phone huaweiP40Pro = new Phone("Huawei Mate 40 Pro", "Huawei", 2000, "6.6", 8, 2021);
         huaweiP40Pro.addImageFromResources("Huawei Mate 40 pro");
         phoneService.savePhone(huaweiP40Pro);
+
+        Phone xiaomiMi11 = new Phone("Xiaomi Mi 11", "Xiaomi", 1500, "6.43", 5, 2021);
+        xiaomiMi11.addImageFromResources("Xiaomi Mi 11");
+        phoneService.savePhone(xiaomiMi11);
+
     }
 
 }
