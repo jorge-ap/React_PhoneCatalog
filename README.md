@@ -2,9 +2,20 @@
 
 Welcome to this repository! Here you can find some features:
 
-## Views
+* [**Views**](#views)
+  * [Index - Phone catalog (/phones)](#index)
+  * [Phone information (/id)](#phoneInfo)
+  * [Phone edition (/phones/id/edit)](#phoneEd)
+  * [Phone creation (/phones/newPhone)](#phoneCreation)
+* [**How to run it**](#runIt)
+  * [Requisites](#reqs)
+  * [Run backend only](#back) 
+  * [Run frontend only](#front)
+* [**Information about docker**](#docker)
 
-### Index - Phone catalog (/phones)
+## Views <a name="views"></a>
+
+### Index - Phone catalog (/phones) <a name="index"></a>
 
 ![image](https://user-images.githubusercontent.com/61882277/131491844-632ab4e1-5e11-453c-a676-23e6cac0dfdb.png)
 
@@ -24,7 +35,7 @@ Here you can do the following actions:
 
   ![image](https://user-images.githubusercontent.com/61882277/131378454-1462ddcd-be81-43e7-902d-4efd4bbb16ca.png)
   
-### Phone information (/id)
+### Phone information (/id) <a name="phoneInfo"></a>
 
   ![image](https://user-images.githubusercontent.com/61882277/131378989-80ff33e1-d814-4eb2-a39f-0f67aa380eea.png)
 
@@ -40,21 +51,21 @@ Here you can see the phone information and do the following actions:
 
 ![image](https://user-images.githubusercontent.com/61882277/131378850-6af99ca7-b9f5-47e8-a80b-8bdc18fa6f75.png)
 
-### Phone edition (/phones/id/edit)
+### Phone edition (/phones/id/edit) <a name="phoneEd"></a>
 
 ![image](https://user-images.githubusercontent.com/61882277/131379088-3265ec69-eaf6-45f1-8715-ab2c18a0119d.png)
 
 Here you can edit the phone. Each parameter is required except the photo, which can be empty. In this case, the image will be set by default. When you finish, you willbe redirected again to the phone information to see the uodates.
 
-### Phone creation (/phones/newPhone)
+### Phone creation (/phones/newPhone) <a name="phoneCreation"></a>
 
 ![image](https://user-images.githubusercontent.com/61882277/131490903-594334c5-c44a-4d59-8a90-e4e1231aaa65.png)
 
 This form is similar to the edition, except there is no picture because it does not have anyone yet. When you submit, you will be redirected to the catalog to see your upload.
 
-## How to run it
+## How to run it <a name="runIt"></a>
 
-### Requisites
+### Requisites <a name="reqs"></a>
 
 To run it, you need to have:
 - Node.js. In case you don't have it, you can install in this link : [Descarga | Node.js](https://nodejs.org/es/download/)
@@ -64,7 +75,7 @@ To run it, you need to have:
 - Maven, installed in ubuntu with the command `sudo apt install maven`
 - **(Optional)** IntelliJ IDEA Ultimate or Visual Studio Code to make things easier
 
-### Run backend only
+### Run backend only <a name="back"></a>
 
 The following steps show how to start the developed web application:
 
@@ -91,13 +102,13 @@ Permissions : `GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, FILE, INDEX, 
  `./mvnn spring-boot:run`
 6. Done! The backend REST is running on `http://localhost:8080`
     
-### Run frontend only
+### Run frontend only <a name="front"></a>
 
-After running the backend, open the frontend folder and execute in terminal section `npm install` and after that `npm start`. This will open a new browser tab on `http://localhost:3000`
+**While backend is running**, open the frontend folder and execute in terminal section `npm install` and after that `npm start`. This will open a new browser tab on `http://localhost:3000`
 
-## Information about docker
+## Information about docker <a name="docker"></a>
 
-**Every information is related to Ubuntu**
+**NOTE**:Every information is related to Ubuntu
 The image is posted on dockerhub in the next link : [Dockerhub](https://hub.docker.com/r/jorgeap/phonecatalog)
 
 To execute docker, with the project downloaded, go to docker folder and run in terminal:
