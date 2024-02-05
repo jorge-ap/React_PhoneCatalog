@@ -39,3 +39,7 @@ hs_err_pid*
 .idea
 .idea/**
 *.iml
+
+.env
+
+.vscode
