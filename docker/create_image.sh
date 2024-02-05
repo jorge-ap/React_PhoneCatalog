@@ -31,3 +31,6 @@ cp target/*.jar ../docker
 cd ../docker || exit
 
 sudo docker build -t jorgeap/phonecatalog .
+
+# Push the image to dockerhub
+sudo docker push jorgeap/phonecatalog

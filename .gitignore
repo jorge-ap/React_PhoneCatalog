@@ -43,3 +43,7 @@ hs_err_pid*
 .env
 
 .vscode
+
+backend/target/
+backend/.mvn
+backend/src/main/resources/static/new
